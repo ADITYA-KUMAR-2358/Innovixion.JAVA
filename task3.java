@@ -1,22 +1,32 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.List;
 import java.util.Scanner;
 
 class Question {
     private String prompt;
     private List<String> options;
     private int correctOption;
-
     public Question(String prompt, List<String> options, int correctOption) {
         this.prompt = prompt;
         this.options = options;
         this.correctOption = correctOption;
     }
 
+    /**
+     * Returns the prompt.
+     *
+     * @return the prompt
+     */
     public String getPrompt() {
         return prompt;
     }
 
+    /**
+     * Returns the options.
+     *
+     * @return the options
+     */
     public List<String> getOptions() {
         return options;
     }
@@ -24,13 +34,13 @@ class Question {
     public int getCorrectOption() {
         return correctOption;
     }
-}
-
 class Quiz {
     private List<Question> questions;
 
     public Quiz(List<Question> questions) {
         this.questions = questions;
+    }
+}
     }
 
     public void startQuiz() {
@@ -46,13 +56,13 @@ class Quiz {
             for (int j = 0; j < options.size(); j++) {
                 System.out.println((j + 1) + ". " + options.get(j));
             }
-
             System.out.print("Your answer: ");
             int userAnswer = scanner.nextInt();
 
             if (userAnswer == currentQuestion.getCorrectOption()) {
                 System.out.println("Correct!\n");
                 score++;
+            }
             } else {
                 System.out.println("Incorrect. The correct answer is: " + currentQuestion.getCorrectOption() + "\n");
             }
