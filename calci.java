@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Calculator {
+public class CommandLineCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -15,18 +13,15 @@ public class Calculator {
                 System.out.println("Exiting the calculator. Goodbye!");
                 break;
             }
-
             try {
                 double result = evaluateExpression(input);
                 System.out.println("Result: " + result);
             } catch (Exception e) {
-                System.out.println("Error: " + e.getMessage());
-            }
-        }
-
-        scanner.close();
     }
+}
 
+scanner.close();
+}
     private static double evaluateExpression(String expression) {
         String[] tokens = expression.split(" ");
         if (tokens.length != 3) {
